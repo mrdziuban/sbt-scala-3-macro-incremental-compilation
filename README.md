@@ -4,7 +4,7 @@ This reproduces an issue with incremental compilation in scala 3 when macros are
 
 There are two projects at play here:
 
-- `types` -- just defines a single type [`Foo`](types/src/main/scala/types/Foo.scala)
+- `types` -- just defines a sum type [`Foo`](types/src/main/scala/types/Foo.scala)
 - `macros` -- has a few files:
   - [`TypeMatchMacro.scala`](macros/src/main/scala/macros/TypeMatchMacro.scala) defines a macro `genTypeMatch` that produces a function `A => String` for some `A` that's a sum type. The `String` is the name of `A`'s type member called `Type`
   - [`ShowFoo.scala`](macros/src/main/scala/macros/ShowFoo.scala) defines a function `showFoo` that shows a `Foo[A]` using the `genTypeMatch` macro
