@@ -20,3 +20,5 @@ To reproduce the issue:
 5. Edit line 6 of [types/src/main/scala/types/Foo.scala](types/src/main/scala/types/Foo.scala) and change `Int` to `String`
 6. Run `macros/run` again
     1. Note that it still prints out `scala.Int`
+
+Interestingly, if you call `genTypeMatch[Foo[_]](Foo.Bar)` directly in `Main.scala` instead of going through `showFoo` in `ShowFoo.scala`, then the issue goes away.
