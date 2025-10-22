@@ -21,4 +21,4 @@ To reproduce the issue:
 6. Run `macros/run` again
     1. Note that it still prints out `scala.Int`
 
-Interestingly, if you call `genTypeMatch[Foo[_]](Foo.Bar)` directly in `Main.scala` instead of going through `showFoo` in `ShowFoo.scala`, then the issue goes away.
+Interestingly, if you call `genTypeMatch[Foo[?]](Foo.Bar)` directly in `Main.scala` instead of going through `showFoo` in `ShowFoo.scala`, then the issue goes away.
